@@ -10,6 +10,7 @@ def hello():
     import pyodbc
     
     
+    #Commit Test
     server = 'qrinventory.database.windows.net'
     database = 'Main'
     username = 'qr@umich.edu@qrinventory'
