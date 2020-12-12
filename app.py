@@ -10,11 +10,11 @@ def hello():
     import pyodbc
     
     
-    server = 'qrinventory.database.windows.net'
-    database = 'Main'
-    username = 'qr@umich.edu@qrinventory'
-    password = 'Scrambledeggs73'   
-    driver= '{ODBC Driver 17 for SQL Server}'
+#    server = 'qrinventory.database.windows.net'
+#    database = 'Main'
+#    username = 'qr@umich.edu@qrinventory'
+#    password = 'Scrambledeggs73'   
+#    driver= '{ODBC Driver 17 for SQL Server}'
     
     with pyodbc.connect('DRIVER='+driver+';SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password) as conn:
         with conn.cursor() as cursor:
