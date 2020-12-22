@@ -1,55 +1,90 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, flash
+from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 app = Flask(__name__)
+app.config.from_object(__name__)
+app.config['SECRET_KEY'] = '7d441f27d441f27567d441f2b6176a'
 
 
-@app.route("/")
+
+class ReusableForm(Form):
+    name = TextField('Name:', validators=[validators.required()])
+    email = TextField('Email:', validators=[validators.required(), validators.Length(min=6, max=35)])
+    password = TextField('Password:', validators=[validators.required(), validators.Length(min=3, max=35)])
+    
+    @app.route("/form", methods=['GET', 'POST'])
+    def form():
+        form = ReusableForm(request.form)
+    
+        print (form.errors)
+        if request.method == 'POST':
+            name=request.form['name']
+            password=request.form['password']
+            email=request.form['email']
+            print (name, " ", email, " ", password)
+    
+        if form.validate():
+        # Save the comment here.
+            flash('Thanks for registration ' + name)
+        else:
+            flash('Error: All the form fields are required. ')
+    
+        return render_template('form.html', form=form)
+
+
+
+@app.route("/index")
 def hello():
     print("Handling request to home page.")
     
-    import pandas as pd
-    import pyodbc
+    import pyodbc 
+    # Some other example server values are
+    # server = 'localhost\sqlexpress' # for a named instance
+    # server = 'myserver,port' # to specify an alternate port
+    server = 'qrinventory.database.windows.net' 
+    database = 'Main' 
+    username = 'qr@umich.edu@qrinventory' 
+    password = 'ScrambledEggs73' 
     
+    cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
+    cursor = cnxn.cursor()
     
-    #Commit Test
-    server = 'qrinventory.database.windows.net'
-    database = 'Main'
-    username = 'qr@umich.edu@qrinventory'
-    password = 'Scrambledeggs73'   
-    driver= '{ODBC Driver 17 for SQL Server}'
-    
-    with pyodbc.connect('DRIVER='+driver+';SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password) as conn:
-        with conn.cursor() as cursor:
-            cursor.execute("SELECT * from dbo.Build")
-            row = cursor.fetchone()
-            
-            rows_list = []
-    
-                               
-            while row:
+    #Sample select query
+    cursor.execute("SELECT * from dbo.Components;") 
+    row = cursor.fetchone() 
+    while row: 
+        print(row[0])
+        row = cursor.fetchone()
                 
-                dict1 = {}
-                print (str(row[0]) + " " + str(row[1]))
-                dict1.update({"ITEM": str(row[0]) + " " + str(row[1])})
-                
-                rows_list.append(dict1)
-                
-                row = cursor.fetchone()
-                
-    df = pd.DataFrame(rows_list)
-                
-    import qrcode
-    qr = qrcode.QRCode(
-        version=1,
-        error_correction=qrcode.constants.ERROR_CORRECT_L,
-        box_size=10,
-        border=4,
-    )
-    qr.add_data('https://qrtest123315123.azurewebsites.net/')
-    qr.make(fit=True)
-    
-    img = qr.make_image(fill_color="black", back_color="white")
-    
-    
-    return render_template("index.html", data = db, img=img)
+    return "index"
+
+@app.route("/increment_component")
+def increment_component():
+    user = {'username': 'Miguel'}
+    posts = [
+        {
+            'author': {'username': 'John'},
+            'body': 'Beautiful day in Portland!'
+        },
+        {
+            'author': {'username': 'Susan'},
+            'body': 'The Avengers movie was so cool!'
+        }
+    ]
+    return render_template('index.html', title='Main', user=user, posts=posts)
+
+@app.route("/build")
+def build():
+    return 'build'
+
+@app.route("/send_inventory")
+def send_inventory():
+    return 'send_inventory'
+
+with app.test_request_context():
+    print(url_for('increment_component'))
+    print(url_for('build'))
+    print(url_for('send_inventory'))
 
 
+if __name__ == "__main__":
+    app.run()
