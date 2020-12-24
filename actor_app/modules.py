@@ -11,10 +11,21 @@ def get_names(source):
 
 # find the row that matches the id in the URL, retrieve name and photo
 def get_actor(source, id):
+    import qrcode
+    
     for row in source:
         if id == str( row["BOM ID"] ):
             name = row["Name"]
-            qr = row["Inventory ID"]
+
+            #Generate QR Code, save it, and return the location of the qr
+            qr = "qr_" +  id + ".jpg"
+            
+            #QR code is generated as the page of the webpage
+            path =  '/module/' + id
+            img = qrcode.make(path)
+            
+            img.save("qr_" +  id + ".jpg")
+            
             # change number to string
             id = str(id)
             # return these if id is valid

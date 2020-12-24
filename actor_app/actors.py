@@ -7,6 +7,7 @@ from wtforms.validators import DataRequired
 from modules import get_names, get_actor, get_id
 import pyodbc
 import json
+import qrcode
 
 app = Flask(__name__)
 
@@ -29,7 +30,8 @@ class NameForm(FlaskForm):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     
-
+    #QR Codes goes here
+    
       
     #Write SQL database into json location
     server = 'qrinventory.database.windows.net' 
@@ -83,13 +85,16 @@ def index():
 def module(id):
     from sql_data import DB
     # run function to get actor data based on the id in the path
+    
+    img_base = r'file:///C:\\Users\\jabian\\Desktop\\qr_app\\actor_app\\' 
+    
     id, name, qr = get_actor(DB, id)
     if name == "Unknown":
         # redirect the browser to the error template
         return render_template('404.html'), 404
     else:
         # pass all the data for the selected actor to the template
-        return render_template('actor.html', id=id, name=name, qr=qr)
+        return render_template('actor.html', id=id, name=name, qr= img_base + qr)
 
 # 2 routes to handle errors - they have templates too
 
