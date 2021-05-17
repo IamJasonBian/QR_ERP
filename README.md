@@ -11,6 +11,7 @@ Figure 1: End to End Inventory flow
 To run the flask app, clone the repo and run app.py inside the main App folder. A cloud database setup comes with a bit more work. To begin you need an azure account. Contact cloud@optimchain.org to see how we can help you setup your backend! (Figure 2)
 
 Figure 2: Front end app interface
+
 ![image](https://user-images.githubusercontent.com/16582383/118562976-974b5600-b722-11eb-85da-b22b557fa781.png)
 
 
