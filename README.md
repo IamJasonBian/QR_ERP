@@ -17,13 +17,13 @@ At it's core, QR ERP comes with the following set of features:
 
 Repo: 
 
-	* https://github.com/IamJasonBian/QR_ERP 
+	<https://github.com/IamJasonBian/QR_ERP>
 
 Pitch Slide:
 
-	* https://github.com/IamJasonBian/QR_ERP/blob/master/QR-ERP-Manufacturing%20Implementation.pptx
+	<https://github.com/IamJasonBian/QR_ERP/blob/master/QR-ERP-Manufacturing%20Implementation.pptx>
 
 
 Demo Site (Please wait 60 seconds for it to load as we are using a small VM):
 
-	* qr-app-test.azurewebsites.net
+	<qr-app-test.azurewebsites.net>
