@@ -12,16 +12,14 @@ At it's core, QR ERP comes with the following set of features:
 With this setup, small manufacturing factories can print QRcodes and auto-increment inventory with their phone! The Azure SQL solution also makes it easy to maintain and keep track of existing tables to update future functionality. 
 
 Repo: 
-	* https://github.com/IamJasonBian/QR_ERP for the repo
+
+	* https://github.com/IamJasonBian/QR_ERP 
 
 Pitch Slide:
 
-	*
+	* https://github.com/IamJasonBian/QR_ERP/blob/master/QR-ERP-Manufacturing%20Implementation.pptx
 
-OneNote sketch:
-
-	* 
 
 Demo Site (Please wait 60 seconds for it to load as we are using a small VM):
 
-	*
+	* qr-app-test.azurewebsites.net
