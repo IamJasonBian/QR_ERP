@@ -1,6 +1,8 @@
 # QR_ERP
 
-QR ERP is a product demo for a cloud based QR scanning system. Small manufacturing facilities need an inventory tracking solution that is lightweight, fast, and accessible without all the expensive bells and whistles that large ERPs typically come with. With this setup, small manufacturing factories can print QRcodes and auto-increment inventory with their phone! The Azure SQL solution also makes it easy to maintain and keep track of existing tables to update future functionality. 
+QR ERP is a product demo for a cloud based QR scanning system. Small manufacturing facilities need an inventory tracking solution that is lightweight, fast, and accessible without all the expensive bells and whistles that large ERPs typically come with. With this setup, small manufacturing factories can print QRcodes and auto-increment inventory with their phone! The Azure SQL solution also makes it easy to maintain and keep track of existing tables to update future functionality. To run the flask app, clone the repo and run app.py inside the main App folder. 
+
+A cloud database setup comes with a bit more work. To begin you need an azure account. Contact cloud@optimchain.org to see how we can help you setup your backend!
 
 At it's core, QR ERP comes with the following set of features:
 
