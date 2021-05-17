@@ -1,4 +1,7 @@
+
 # QR_ERP
+
+<img width="863" alt="QR ERP BG" src="https://user-images.githubusercontent.com/16582383/118562065-df697900-b720-11eb-9fa6-c8a76dfc289c.PNG">
 
 QR ERP is a product demo for a cloud based QR scanning system. Small manufacturing facilities need an inventory tracking solution that is lightweight, fast, and accessible without all the expensive bells and whistles that large ERPs typically come with. With this setup, small manufacturing factories can print QRcodes and auto-increment inventory with their phone! The Azure SQL solution also makes it easy to maintain and keep track of existing tables to update future functionality. To run the flask app, clone the repo and run app.py inside the main App folder. 
 
