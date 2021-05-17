@@ -1,6 +1,6 @@
 # QR_ERP
 
-QR ERP is a product demo for a cloud based QR scanning system. Small manufacturing facilities need an inventory tracking solution that is lightweight, fast, and accessible without all the expensive bells and whistles that large ERPs typically come with. 
+QR ERP is a product demo for a cloud based QR scanning system. Small manufacturing facilities need an inventory tracking solution that is lightweight, fast, and accessible without all the expensive bells and whistles that large ERPs typically come with. With this setup, small manufacturing factories can print QRcodes and auto-increment inventory with their phone! The Azure SQL solution also makes it easy to maintain and keep track of existing tables to update future functionality. 
 
 At it's core, QR ERP comes with the following set of features:
 
@@ -9,7 +9,6 @@ At it's core, QR ERP comes with the following set of features:
 	* Auto QR generation to trigger front-end app for incrementing inventory
 	* DataFeed into excel to see on-hand inventory
 
-With this setup, small manufacturing factories can print QRcodes and auto-increment inventory with their phone! The Azure SQL solution also makes it easy to maintain and keep track of existing tables to update future functionality. 
 
 Repo: 
 
