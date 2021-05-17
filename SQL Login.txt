@@ -1,8 +1,0 @@
-
-DB: qrinventory.database.windows.net
-
-Auth: Azure Active Directory - Universal with MFA
-
-User: jasonzb@umich.edu
-
-Login: Element11573fixed!

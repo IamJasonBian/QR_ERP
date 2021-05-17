@@ -1,10 +1,27 @@
-ReadMe
+# QR_ERP
 
-SQL Access Credentials for in 
+QR ERP is a product demo for a cloud based QR scanning system. Small manufacturing facilities need an inventory tracking solution that is lightweight, fast, and accessible without all the expensive bells and whistles that large ERPs typically come with. 
 
-* SQL Login.txt
+At it's core, QR ERP comes with the following set of features:
 
-Use SSMS to access SQL Server
+	* Backend Azure System with different Azure SQL tables
+	* Front-end triggerable stored procs to manipulate Azure SQL tables
+	* Auto QR generation to trigger front-end app for incrementing inventory
+	* DataFeed into excel to see on-hand inventory
 
-Same Access Credentials can be used for Azure Account
+With this setup, small manufacturing factories can print QRcodes and auto-increment inventory with their phone! The Azure SQL solution also makes it easy to maintain and keep track of existing tables to update future functionality. 
 
+Repo: 
+	* https://github.com/IamJasonBian/QR_ERP for the repo
+
+Pitch Slide:
+
+	*
+
+OneNote sketch:
+
+	* 
+
+Demo Site (Please wait 60 seconds for it to load as we are using a small VM):
+
+	*
